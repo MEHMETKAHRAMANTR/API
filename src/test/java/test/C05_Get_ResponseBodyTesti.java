@@ -1,9 +1,9 @@
 package test;
 
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 
 public class C05_Get_ResponseBodyTesti {
     /*
@@ -28,8 +28,7 @@ public class C05_Get_ResponseBodyTesti {
                 .assertThat()
                 .statusCode(200)
                 .contentType("application/json; charset=utf-8")
-                .body("userId", Matchers.equalTo(5))
-                .body("title", Matchers.equalTo("optio dolor molestias sit"));
+                .body("userId", equalTo(5),"title", equalTo("optio dolor molestias sit"));
 
     }
 }
