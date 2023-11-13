@@ -48,13 +48,25 @@ public class C08_JSONArrayKullanimi {
 
         JSONObject personelInfo=new JSONObject();
         personelInfo.put("firstName","Jhon");
-        personelInfo.put("LastName","doe");
+        personelInfo.put("lastName","doe");
         personelInfo.put("age",26);
         personelInfo.put("address",adres);
         personelInfo.put("phoneNumbers",phoneNumbers);
 
-        System.out.println("personelInfo: "+personelInfo);
-        
+        System.out.println("Adı     : "+personelInfo.get("firstName"));
+        System.out.println("Saoyadı : "+personelInfo.get("lastName"));
+        System.out.println("Yaş     : "+personelInfo.get("age"));
+        System.out.println("Sokak   : "+personelInfo.getJSONObject("address").get("streetAddress"));
+        System.out.println("Şehir   : "+personelInfo.getJSONObject("address").get("city"));
+        System.out.println("P.Kodu  : "+personelInfo.getJSONObject("address").get("postalCode"));
+        System.out.println("Cep Tel : "+personelInfo.getJSONArray("phoneNumbers").getJSONObject(0).get("type"));
+        System.out.println("Cep Tel : "+personelInfo.getJSONArray("phoneNumbers").getJSONObject(0).get("number"));
+        System.out.println("Ev Tel  : "+personelInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("type"));
+        System.out.println("Ev Tel  : "+personelInfo.getJSONArray("phoneNumbers").getJSONObject(1).get("number"));
+
+
+
+
     }
 
 }
