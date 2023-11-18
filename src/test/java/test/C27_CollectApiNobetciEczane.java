@@ -20,7 +20,7 @@ public class C27_CollectApiNobetciEczane extends CollectAPIBaseUrl {
                 .headers("authorization", "apikey " + token)
                 .when()
                 .get("/{pp1}/{pp2}");
-        //System.out.println("statusCode = " + response.statusCode());
+        System.out.println("statusCode = " + response.statusCode());
         response.prettyPrint();
     }
 }
